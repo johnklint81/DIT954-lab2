@@ -3,8 +3,9 @@ import java.util.ArrayDeque;
 
 public class Ramp {
     private Truck owner;    // the transporter that the ramp is installed on
+                            // the ownership could change, ramp is moved to another truck
     private boolean down = false;   // is the ramp down or not?
-    private final int capacity;    // how many cars can the ramp hold
+    private final int capacity;    // how many cars can the ramp hold?
     private final Deque<Car> stack;   // lifo container for cars
     // constructor
     protected Ramp(Truck truck, int capacity) {
