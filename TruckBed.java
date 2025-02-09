@@ -3,8 +3,9 @@ public class TruckBed {
     private final double MAX_ANGLE = 70;    // degrees
     private double currentAngle;    // degrees
     private Truck owner;
+    // Different truck beds could have space for different volumes, etc
 
-    public TruckBed(Truck truck) {
+    protected TruckBed(Truck truck) {
         this.owner = truck;
     }
 
@@ -12,7 +13,7 @@ public class TruckBed {
         return currentAngle;
     }
 
-    public void lower(double angle) {
+    protected void lower(double angle) {
         if (owner.getCurrentSpeed() == 0) {
             double newAngle = getCurrentAngle() - angle;
             this.currentAngle = Math.max(MIN_ANGLE, newAngle);
@@ -22,7 +23,7 @@ public class TruckBed {
         }
 
     }
-    public void raise(double angle) {
+    protected void raise(double angle) {
         if (owner.getCurrentSpeed() == 0) {
             double newAngle = getCurrentAngle() + angle;
             this.currentAngle = Math.min(MAX_ANGLE, newAngle);

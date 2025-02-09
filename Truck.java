@@ -6,6 +6,7 @@ public abstract class Truck extends Vehicle {
     private double currentSpeed = 0; // The current speed of the car
     private Color color; // Color of the car
 
+    // Yeah, maybe nrDoors isn't really relevant when it comes to truck, but it is still there
     protected Truck(int nrDoors, double enginePower, Color color, String modelName) {
         super(nrDoors,  enginePower, color, modelName);
         stopEngine();
