@@ -13,5 +13,9 @@ public abstract class Car extends Vehicle implements Movable {
         super(nrDoors,  enginePower, color, modelName);
         stopEngine();
     }
+    @Override
+    protected boolean canMove() {
+        return true;
+    }
 
 }
