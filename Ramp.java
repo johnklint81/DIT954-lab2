@@ -20,7 +20,7 @@ public class Ramp {
             sum += Math.pow((this.owner.getCurrentPosition()[i] - car.getCurrentPosition()[i]), 2);
         }
         // in meters, value to determine if car is close to ramp
-        double threshold = 10;
+        double threshold = 5;
         return Math.sqrt(sum) < threshold;
     }
     // push to stack
@@ -30,6 +30,9 @@ public class Ramp {
         }
         else if (!isClose(car)) {
             throw new IllegalStateException("That car is too fara away from the ramp.");
+        }
+        else if (stack.contains(car)) {
+            throw new IllegalArgumentException("That car is already loaded onto the ramp.");
         }
         stack.push(car);
     }

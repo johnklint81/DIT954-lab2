@@ -14,7 +14,7 @@ public class ScaniaTest {
         scania.move();
         assertFalse(Arrays.equals(initialPos, scania.getCurrentPosition()));
     }
-
+    @Test
     void raise() {
         Scania scania = new Scania();
         scania.truckBed.raise(100);
