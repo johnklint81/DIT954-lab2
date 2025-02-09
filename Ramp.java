@@ -24,6 +24,9 @@ public class Ramp {
         if (stack.size() >= capacity) {
             throw new IllegalStateException("The ramp is full. Cannot load any more cars.");
         }
+        else if (!isClose(car)) {
+            throw new IllegalStateException("That car is too fara away from the ramp.");
+        }
         stack.push(car);
     }
     public Car pop() {
