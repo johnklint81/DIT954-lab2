@@ -6,7 +6,7 @@ public class Scania extends Truck {
     protected TruckBed truckBed;
 
     protected Scania() {
-        super(2, 125, Color.BLACK, "Scania");
+        super(2, 125, Color.BLACK, Brand.Scania);
         this.truckBed = new TruckBed(this);
         turboOn = false;
     }

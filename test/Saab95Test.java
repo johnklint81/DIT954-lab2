@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
-
 import java.awt.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class Saab95Test {
@@ -59,7 +57,7 @@ class Saab95Test {
     @Test
     void getModelName() {
         Saab95 saab95 = new Saab95();
-        assertEquals("Saab95", saab95.getModelName());
+        assertEquals(Brand.Saab95, saab95.getModelName());
     }
 
 }

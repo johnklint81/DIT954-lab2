@@ -7,7 +7,7 @@ public abstract class Truck extends Vehicle {
     private Color color; // Color of the car
 
     // Yeah, maybe nrDoors isn't really relevant when it comes to truck, but it is still there
-    protected Truck(int nrDoors, double enginePower, Color color, String modelName) {
+    protected Truck(int nrDoors, double enginePower, Color color, Brand modelName) {
         super(nrDoors,  enginePower, color, modelName);
         stopEngine();
     }

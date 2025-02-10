@@ -41,7 +41,7 @@ class Volvo240Test {
     @Test
     void getModelName() {
         Volvo240 volvo240 = new Volvo240();
-        assertEquals("Volvo240", volvo240.getModelName());
+        assertEquals(Brand.Volvo240, volvo240.getModelName());
     }
 
 }

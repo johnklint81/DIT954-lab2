@@ -3,7 +3,7 @@ import java.util.ArrayDeque;
 
 public class Ramp {
     private Truck owner;    // the transporter that the ramp is installed on
-                            // the ownership could change, ramp is moved to another truck
+                            // the ownership could change, ramp is moved to another truck, etc
     private boolean down = false;   // is the ramp down or not?
     private final int capacity;    // how many cars can the ramp hold?
     private final Deque<Car> stack;   // lifo container for cars
@@ -16,6 +16,7 @@ public class Ramp {
     // check if the car is close enough to be loaded to ramp
     public boolean isClose(Car car) {
         double sum = 0;
+        // compute L2 norm
         for (int i = 0; i < 2; i++) {
             sum += Math.pow((this.owner.getCurrentPosition()[i] - car.getCurrentPosition()[i]), 2);
         }

@@ -9,7 +9,7 @@ public abstract class Car extends Vehicle implements Movable {
     private double currentSpeed = 0; // The current speed of the car
     private Color color; // Color of the car
 
-    protected Car(int nrDoors, double enginePower, Color color, String modelName) {
+    protected Car(int nrDoors, double enginePower, Color color, Brand modelName) {
         super(nrDoors,  enginePower, color, modelName);
         stopEngine();
     }

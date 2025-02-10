@@ -5,7 +5,7 @@ public class CarTransporter extends Truck {
     protected Ramp ramp;
 
     protected CarTransporter(int capacity) {
-        super(2, 75, Color.BLACK, "Scania");
+        super(2, 75, Color.BLACK, Brand.CarTransporter);
         // Give the CarTransporter a ramp with specified capacity
         this.ramp = new Ramp(this, capacity);
         stopEngine();

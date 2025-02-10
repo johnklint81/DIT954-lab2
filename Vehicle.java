@@ -7,9 +7,9 @@ public abstract class Vehicle implements Movable {
     private final double enginePower; // Engine power of the car
     private double currentSpeed = 0; // The current speed of the car
     private Color color; // Color of the car
-    private final String modelName; // The car model name
+    private final Brand modelName; // The vehicle model name
 
-    protected Vehicle(int nrDoors, double enginePower, Color color, String modelName) {
+    protected Vehicle(int nrDoors, double enginePower, Color color, Brand modelName) {
         this.nrDoors = nrDoors;
         this.enginePower = enginePower;
         this.color = color;
@@ -65,7 +65,7 @@ public abstract class Vehicle implements Movable {
     public Color getColor() {
         return color;
     }
-    public String getModelName() {
+    public Brand getModelName() {
         return modelName;
     }
 
@@ -96,6 +96,10 @@ public abstract class Vehicle implements Movable {
 
     private void decrementSpeed(double amount) {
         setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
+    }
+
+    public Brand getBrand() {
+        return this.modelName;
     }
 
     public void gas(double amount) {
