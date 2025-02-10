@@ -3,11 +3,11 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-public class Garage {
+public class Garage<T extends Car> {
 
     private final int capacity;     // allowed number of cars in the garage
-    private List<Brand> allowedBrands = new ArrayList<>();  // allowed brands for the garage
-    private List<Car> carList = new ArrayList<>();  // cars in the garage
+    private List<Brand> allowedBrands;  // allowed brands for the garage
+    private List<T> carList = new ArrayList<>();  // cars in the garage
 
     // Takes a list of enums specifying car brands
     protected Garage(int capacity, List<Brand> allowedBrands) {
@@ -20,7 +20,7 @@ public class Garage {
         this.allowedBrands = Arrays.asList(Brand.values());
     }
 
-    public void addCar(Car car) {
+    public void addCar(T car) {
         if (checkAllowedBrands(car) && carList.size() < this.capacity) {
             carList.add(car);
         }
@@ -29,10 +29,11 @@ public class Garage {
         }
     }
     // Remove a car by selecting the brand of car.
-    public Car removeCar(Brand brand) {
-        for (Car car : carList) {
+    public T removeCar(Brand brand) {
+        for (T car : carList) {
             if (car.getBrand() == brand) {
                 carList.remove(car);
+                // Keeping type Car as return-type is maybe safer than using generic?
                 return car;
             }
         }
