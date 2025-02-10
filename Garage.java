@@ -5,9 +5,9 @@ import java.util.NoSuchElementException;
 
 public class Garage {
 
-    private final int capacity;
-    private List<Brand> allowedBrands = new ArrayList<>();
-    private List<Car> carList = new ArrayList<>();
+    private final int capacity;     // allowed number of cars in the garage
+    private List<Brand> allowedBrands = new ArrayList<>();  // allowed brands for the garage
+    private List<Car> carList = new ArrayList<>();  // cars in the garage
 
     // Takes a list of enums specifying car brands
     protected Garage(int capacity, List<Brand> allowedBrands) {
@@ -21,7 +21,7 @@ public class Garage {
     }
 
     public void addCar(Car car) {
-        if (checkAllowedBrands(car)) {
+        if (checkAllowedBrands(car) && carList.size() < this.capacity) {
             carList.add(car);
         }
         else {
